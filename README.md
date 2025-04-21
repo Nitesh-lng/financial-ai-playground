@@ -30,9 +30,6 @@ An **AI-powered system** for **financial advising** and **web research**, utiliz
 
 ---
 
-## 📸 Preview
-
-*Add a screenshot of your Streamlit UI in the `/assets` folder.*
 
 **UI Preview**
 
