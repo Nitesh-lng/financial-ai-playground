@@ -1,0 +1,7 @@
+groq
+phidata
+yfinance
+python-dotenv
+duckduckgo-search
+sqlalchemy
+fastapi[standard]
