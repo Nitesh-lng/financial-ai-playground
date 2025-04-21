@@ -1,95 +1,132 @@
 
-# AI Financial Advisor and Web Researcher
+# 🤖 AI Financial Advisor and Web Researcher
 
-This project features an AI-powered system designed for financial advising and web research. The system uses the **Groq** model and integrates with various tools such as **YFinance** for financial data and **DuckDuckGo** for web research. It is built using the **Phi** framework, **FastAPI**, and **Streamlit**.
+An **AI-powered system** for **financial advising** and **web research**, utilizing **Groq** models and **Phi** framework. Integrates **YFinance** for financial data, including stock prices and analyst recommendations, and **DuckDuckGo** for web research. Built with a **FastAPI** backend and **Streamlit** frontend.
 
-## Project Structure
+**Python** FastAPI | Streamlit | Phi | Groq | YFinance | DuckDuckGo
 
-1. **playground.py**: Main file that initializes the agents and serves the Playground app.
-2. **financial_advisor.py**: A script that defines the financial advisor agent and web researcher agent. These agents perform financial analysis and gather web data respectively.
-3. **.env**: Stores environment variables, particularly the API key for Groq.
+---
 
-## Features
+## 📚 Table of Contents
 
-- **Financial Advisor Agent**:
-    - Provides stock prices, analyst recommendations, and stock fundamentals using **YFinance**.
-    - Allows easy querying of financial data in table format.
-    - Uses an SQLite database to store data from interactions.
+- ✨ [Features](#✨-features)
+- 📸 [Preview](#📸-preview)
+- 🚀 [Getting Started](#🚀-getting-started)
+- 📁 [Project Structure](#📁-project-structure)
+- 🤖 [Supported Models](#🤖-supported-models)
+- 📜 [License](#📜-license)
+- 🤝 [Contributions](#🤝-contributions)
 
-- **Web Researcher Agent**:
-    - Uses **DuckDuckGo** to fetch information from the web.
-    - Always includes the source of the data retrieved.
+---
 
-- **Agent Team**:
-    - Combines the financial advisor and web researcher agents into a team, allowing for integrated financial and web research tasks.
+## ✨ Features
 
-## Prerequisites
+- 🔗 **Powered by Groq** for model inference.
+- 📊 **Financial Advisor** agent for real-time stock prices, analyst recommendations, and stock fundamentals using **YFinance**.
+- 🌐 **Web Researcher** agent for retrieving web data using **DuckDuckGo**, including source citation.
+- ⚙️ **Backend**: FastAPI for managing API requests.
+- 🎨 **Frontend**: Streamlit UI for interactive querying and results display.
+- 🛠️ Modular and easy to extend with additional agents or tools.
 
-Before running the project, make sure you have the following dependencies installed:
+---
 
-- Python 3.x
-- **Phi** library (for Groq models and agents)
-- **dotenv** for managing environment variables
-- **SQLite** for storing agent interaction history
-- **YFinance** for financial tools
-- **DuckDuckGo** for web research
+## 📸 Preview
 
-You can install these dependencies using `pip`:
+*Add a screenshot of your Streamlit UI in the `/assets` folder.*
 
-```bash
-pip install phi dotenv yfinance duckduckgo
-```
+**UI Preview**
 
-## Setup
+---
 
-1. Clone this repository:
+## 🚀 Getting Started
 
-    ```bash
-    git clone https://github.com/yourusername/ai-financial-advisor.git
-    cd ai-financial-advisor
-    ```
-
-2. Create a `.env` file in the root directory and add your **GROQ_API_KEY**:
-
-    ```ini
-    GROQ_API_KEY=your_api_key_here
-    ```
-
-3. Install required dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-## Running the Application
-
-To run the Playground app with the agents, execute the following command:
+### 1. Clone the repo
 
 ```bash
-python playground.py
+git clone https://github.com/your-username/ai-financial-advisor.git
+cd ai-financial-advisor
 ```
 
-The app will start and you can interact with both agents through the user interface.
+### 2. Install dependencies
 
-## How It Works
+It’s recommended to use a virtual environment:
 
-- **Playground**: The Playground app combines the financial advisor and web researcher agents. The `financial_advisor` agent handles financial data retrieval and analysis, while the `web_researcher` agent is responsible for pulling relevant web data. 
-- **SQL Storage**: Both agents store their interaction history in an SQLite database for later retrieval and analysis.
+```bash
+pip install -r requirements.txt
+```
 
-## Example Use Case
+### 3. Setup environment variables
 
-You can ask the agents questions like:
+Create a `.env` file:
 
-- "Is NTPC stock a good buy?"
-- "What are the latest analyst recommendations for Apple?"
-- "Find the latest news on the solar energy market."
+```ini
+GROQ_API_KEY=your_groq_api_key
+```
 
-The agents will fetch the required data and present it in a user-friendly format, including tables for financial data and sources for web research.
+Alternatively, you can use the provided example:
 
-## Contributing
+```bash
+cp .env.example .env
+```
 
-Contributions are welcome! If you'd like to contribute, feel free to open a pull request.
+### 4. Run the backend server
 
-## License
+```bash
+uvicorn backend:app --reload --port 9998
+```
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### 5. Run the frontend
+
+```bash
+streamlit run frontend.py
+```
+
+---
+
+## 📁 Project Structure
+
+| File/Folder          | Purpose                                                |
+|----------------------|--------------------------------------------------------|
+| `playground.py`       | Main entry point for initializing agents and serving the app |
+| `financial_advisor.py`| Logic for financial advisor and web researcher agents |
+| `backend.py`          | FastAPI server for handling requests                  |
+| `frontend.py`         | Streamlit UI for user interaction                     |
+| `requirements.txt`    | Python dependencies                                    |
+| `.env.example`        | Sample environment configuration (API keys)           |
+| `assets/`             | Screenshots and media                                 |
+
+---
+
+## 🤖 Supported Models
+
+- **Groq**:  
+  - `meta-llama/llama-4-maverick-17b-128e-instruct`
+- **Other Models**:  
+  - Extendable to include other LLMs as required.
+
+---
+
+## 📜 License
+
+This project is open-source and licensed under the **MIT License**.
+
+---
+
+## 🤝 Contributions
+
+Have an idea? Found a bug? Want to add a feature?
+
+Feel free to open an issue or submit a pull request!  
+⭐ Star this repo to support the project!
+
+---
+
+### About
+
+AI-powered **financial advisor** and **web researcher** built using **Groq**, **YFinance**, **DuckDuckGo**, **Phi**, and **FastAPI**.
+
+---
+
+### Topics
+
+openai, fastapi, groq, streamlit, ai-chatbot, financial-advisor, phi, yfinance, duckduckgo
